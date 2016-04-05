@@ -1,0 +1,21 @@
+<!--DOCTYPE html-->
+<html>
+	<head>
+		<title>How Many "Heyaw"s?</title>
+		<link type="text/css" rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<a href="https://chrome.google.com/webstore/detail/heyaw/cmogbepjcbmcanikemkokmcmpmcahiej?hl=en"><h1 id="counter">...</h1></a>
+		<p>heyaws have been heyawed.</p>
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script>
+			var display = document.getElementById("counter");
+			window.setInterval(updateNum, 500);
+			function updateNum() {
+				$.get("num", function(data) {
+					display.innerHTML = data;
+				});
+			}
+		</script>
+	</body>
+</html>
