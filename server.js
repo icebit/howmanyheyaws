@@ -36,6 +36,7 @@ app.get("/add", function(req, res) {
 	// /add?num=x
 	var num = req.param("num");
 	num_heyaws += ~~num;
+	console.log(num + " heyaws recieved");
 	res.sendStatus(0);
 });
 
