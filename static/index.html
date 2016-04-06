@@ -10,12 +10,13 @@
 		<h1 id="counter">...</h1>
 		<h6><a href=https://chrome.google.com/webstore/detail/heyaw/cmogbepjcbmcanikemkokmcmpmcahiej?hl=en>heyaws</a> have been <a href=https://chrome.google.com/webstore/detail/heyaw/cmogbepjcbmcanikemkokmcmpmcahiej?hl=en>heyawed</a>.</h6>
 		<p>(Since April 5 2016)</p>
-
+		<p>Fun Fact: The average person can heyaw ~1118 times per minute, or ~19 times per second.</p>	
+	
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script>
 			updateNum();
 			var display = document.getElementById("counter");
-			window.setInterval(updateNum, 500);
+			window.setInterval(updateNum, 150);
 			function updateNum() {
 				$.get("num", function(data) {
 					display.innerHTML = data;

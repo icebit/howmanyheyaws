@@ -36,7 +36,7 @@ app.get("/add", function(req, res) {
 	// /add?num=x
 	var num = req.param("num");
 	num_heyaws += ~~num;
-	console.log(num + " heyaws recieved");
+	console.log(num + " heyaws recieved from " + req.headers['x-forwarded-for'] || req.connection.remoteAddress);
 	res.sendStatus(0);
 });
 
