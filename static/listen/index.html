@@ -1,0 +1,102 @@
+<!--DOCTYPE html-->
+<html>
+	<head>
+		<title>Listen to the Heyaws</title>
+		<link type="text/css" rel="stylesheet" href="/main.css">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<p>This is the current traffic on the Heyaw server.</p>
+		<p>Here you can listen to the music that people across the globe are heyawing.</p>
+
+		<a href="/">Back to heyaw counter</a>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="buzz.min.js"></script>
+		<script>
+			var socket = io();
+			var C = new buzz.sound("scale/C.wav");
+			var Cs = new buzz.sound("scale/Cs.wav");
+			var D = new buzz.sound("scale/D.wav");
+			var Ds = new buzz.sound("scale/Ds.wav");
+			var E = new buzz.sound("scale/E.wav");
+			var F = new buzz.sound("scale/F.wav");
+			var Fs = new buzz.sound("scale/Fs.wav");
+			var G = new buzz.sound("scale/G.wav");
+			var Gs = new buzz.sound("scale/Gs.wav");
+			var hA = new buzz.sound("scale/hA.wav");
+			var hAs = new buzz.sound("scale/hAs.wav");
+			var hB = new buzz.sound("scale/hB.wav");
+			var hC = new buzz.sound("scale/hC.wav");
+
+			socket.on("sound", function(data) {
+				if(data == 65){
+					C.stop();
+					C.play();
+				}
+
+				if(data == 87){
+					Cs.stop();
+					Cs.play();
+				}
+
+				if(data == 83){
+					D.stop();
+					D.play();
+				}
+
+				if(data == 69){
+					Ds.stop();
+					Ds.play();
+				}
+
+				if(data == 68){
+					E.stop();
+					E.play();
+				}
+
+				if(data == 70){
+					F.stop();
+					F.play();
+				}
+
+				if(data == 84){
+					Fs.stop();
+					Fs.play();
+				}
+
+				if(data == 71){
+					G.stop();
+					G.play();
+				}
+
+				if(data == 89){
+					Gs.stop();
+					Gs.play();
+				}
+
+				if(data == 72){
+					hA.stop();
+					hA.play();
+				}
+
+				if(data == 85){
+					hAs.stop();
+					hAs.play();
+				}
+
+				if(data == 74){
+					hB.stop();
+					hB.play();
+				}
+
+				if(data == 75){
+					hC.stop();
+					hC.play();
+				}
+			})
+
+		</script>
+	</body>
+</html>

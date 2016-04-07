@@ -1,10 +1,14 @@
 var express = require("express");
 var app = express();
+var http = require("http").Server(app);
+var io = require("socket.io")(http);
 
 var fs = require("fs");
 
 var PORT = 4433;
 var num_heyaws = 0;
+
+var play_queue = [];
 
 //Read num_heyaws
 fs.readFile("num_heyaws", "utf8", function (err, data) {
@@ -40,11 +44,23 @@ app.get("/add", function(req, res) {
 	res.sendStatus(0);
 });
 
-app.listen(PORT, function () {
+app.get("/play", function(req, res) {
+	// /play?code=x
+	var code = ~~req.param("code");
+	console.log("Code " + code + " recieved");
+	io.emit("sound", code)
+	res.sendStatus(0);
+});
+
+http.listen(PORT, function () {
   console.log("Listening on port " + PORT);
 });
 
 process.on('SIGTERM', function () {
 	saveHeyaws();
 	process.exit(0);
+});
+
+io.on("connection", function(socket){
+  console.log("A user is now listening to the heyaws");
 });

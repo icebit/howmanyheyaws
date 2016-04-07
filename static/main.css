@@ -1,29 +1,28 @@
 body {
 	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	background-color: #f9f9f9;
 }
 
 h1 {
 	font-size: 4em;
-	text-align: center;
 	text-decoration: none;
 	color: #111;
 }
 
 h6 {
 	font-size: 1.5em;
-	text-align: center;
 	text-decoration: none;
 	color: #111;
 }
 
 a {
 	font-size: 1em;
-	text-align: center;
+	color: #CE0A31;
 }
 
 p {
 	font-size: 1em;
-	text-align: center;
 	text-decoration: none;
 	color: #111;
 }
